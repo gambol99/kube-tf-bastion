@@ -47,7 +47,7 @@ variable "vpc_id" {
 }
 variable "bastion_subnets" {
   description = "A list of subnet that the bastion should deploy into"
-  type        = "list"
+  type        = "map"
 }
 variable "bastion_sg" {
   description = "The AWS security group to use on with the bastion hosts"

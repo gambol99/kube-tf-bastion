@@ -76,7 +76,7 @@ resource "aws_autoscaling_group" "bastion" {
   min_size                  = "${var.bastion_count}"
   name                      = "${var.environment}-bastion"
   termination_policies      = [ "OldestInstance", "Default" ]
-  vpc_zone_identifier       = [ "${var.bastion_subnets}" ]
+  vpc_zone_identifier       = [ "${values(var.bastion_subnets)}" ]
   wait_for_capacity_timeout = "1m"
 
   lifecycle {
